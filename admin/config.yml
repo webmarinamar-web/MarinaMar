@@ -1,0 +1,57 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "images"
+
+locale: "es"
+
+collections:
+  - name: "contenido"
+    label: "Contenido de la web"
+    files:
+      - file: "content/datos.json"
+        label: "Textos y contacto"
+        name: "datos"
+        fields:
+          - label: "Textos"
+            name: "textos"
+            widget: "object"
+            fields:
+              - { label: "Título portada de Inicio", name: "titulo_inicio", widget: "string" }
+              - { label: "Subtítulo portada de Inicio", name: "subtitulo_inicio", widget: "text" }
+              - { label: "Precio temporada alta", name: "precio_alta", widget: "string", hint: "Ej: 160 €" }
+              - { label: "Precio temporada media", name: "precio_media", widget: "string", hint: "Ej: 130 €" }
+              - { label: "Teléfono 1", name: "telefono1", widget: "string" }
+              - { label: "Teléfono 2", name: "telefono2", widget: "string" }
+              - { label: "Correo 1", name: "correo1", widget: "string" }
+              - { label: "Correo 2", name: "correo2", widget: "string" }
+          - label: "Enlaces"
+            name: "enlaces"
+            widget: "object"
+            fields:
+              - { label: "WhatsApp (enlace completo de wa.me)", name: "whatsapp", widget: "string" }
+              - { label: "Booking", name: "booking", widget: "string" }
+              - { label: "Airbnb", name: "airbnb", widget: "string", required: false }
+              - { label: "Rentalia", name: "rentalia", widget: "string", required: false }
+
+      - file: "content/fotos.json"
+        label: "Fotos"
+        name: "fotos"
+        fields:
+          - { label: "Portada · Inicio", name: "portada_inicio", widget: "image", required: false }
+          - { label: "Salón (sección Inicio)", name: "inicio_salon", widget: "image", required: false }
+          - { label: "Dormitorio (sección Inicio)", name: "inicio_dormitorio", widget: "image", required: false }
+          - { label: "Cocina (sección Inicio)", name: "inicio_cocina", widget: "image", required: false }
+          - { label: "Portada · Alojamiento", name: "portada_alojamiento", widget: "image", required: false }
+          - { label: "Dormitorio principal", name: "dorm_principal", widget: "image", required: false }
+          - { label: "Dormitorio doble", name: "dorm_doble", widget: "image", required: false }
+          - { label: "Dormitorio de gemelas", name: "dorm_gemelas", widget: "image", required: false }
+          - { label: "Dormitorio individual", name: "dorm_individual", widget: "image", required: false }
+          - { label: "Salón", name: "salon", widget: "image", required: false }
+          - { label: "Salón comedor", name: "salon_comedor", widget: "image", required: false }
+          - { label: "Cocina", name: "cocina", widget: "image", required: false }
+          - { label: "Baño del pasillo", name: "bano_pasillo", widget: "image", required: false }
+          - { label: "Baño del dormitorio principal", name: "bano_dormitorio", widget: "image", required: false }
+          - { label: "Portada · Actividades", name: "portada_actividades", widget: "image", required: false }

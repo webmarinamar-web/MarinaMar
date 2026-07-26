@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MarinaMar Camariñas — maqueta completa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Karla:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+:root{
+  --tinta:#14262e; --ria:#1f4a5c; --verdin:#4a8878; --verdin-h:#3a6d5f;
+  --arena:#c9bda6; --bruma:#eef1f1; --papel:#fff; --gris:#5d6d74; --linea:#d7dedd;
+  --display:"Newsreader",Georgia,serif;
+  --texto:"Karla",system-ui,sans-serif;
+  --dato:"IBM Plex Mono",ui-monospace,monospace;
+  --ancho:1120px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bruma);color:var(--tinta);font-family:var(--texto);
+  font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--ria)}
+h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.15;letter-spacing:-.01em;margin:0 0 .5em}
+h1{font-size:clamp(2.1rem,5.5vw,3.6rem)}
+h2{font-size:clamp(1.6rem,3.4vw,2.35rem)}
+h3{font-size:1.3rem}
+p{margin:0 0 1.1em;max-width:68ch}
+.contenedor{width:min(var(--ancho),100% - 2.5rem);margin-inline:auto}
+.seccion{padding:clamp(3rem,7vw,5.5rem) 0}
+.seccion--papel{background:var(--papel)}
+.eyebrow{font-family:var(--dato);font-size:.72rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--verdin);margin:0 0 .9rem}
+.saltar{position:absolute;left:-9999px;background:var(--tinta);color:#fff;padding:.7rem 1.1rem;z-index:200}
+.saltar:focus{left:0}
+:focus-visible{outline:3px solid var(--verdin);outline-offset:3px}
+
+/* firma: encaje de palillos */
+.encaje{height:16px;opacity:.75;margin:0 auto;max-width:var(--ancho);
+  background-repeat:repeat-x;background-position:center;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='16' viewBox='0 0 40 16'><g fill='none' stroke='%234a8878' stroke-width='1'><path d='M0 8 Q10 1 20 8 T40 8'/><path d='M0 8 Q10 15 20 8 T40 8'/></g><circle cx='20' cy='8' r='1.6' fill='%23c9bda6'/><circle cx='0' cy='8' r='1.6' fill='%23c9bda6'/><circle cx='40' cy='8' r='1.6' fill='%23c9bda6'/></svg>")}
+
+/* cabecera */
+.cabecera{position:sticky;top:0;z-index:100;background:rgba(238,241,241,.94);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
+.cabecera__fila{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0}
+.marca{font-family:var(--display);font-size:1.2rem;color:var(--tinta);
+  text-decoration:none;white-space:nowrap;background:none;border:0;cursor:pointer;padding:0}
+.marca span{color:var(--verdin)}
+.nav ul{display:flex;gap:1.6rem;list-style:none;margin:0;padding:0}
+.nav button{background:none;border:0;font-family:inherit;font-size:.95rem;color:var(--tinta);
+  cursor:pointer;padding:.3rem 0;border-bottom:2px solid transparent}
+.nav button:hover{border-bottom-color:var(--arena)}
+.nav button.activo{border-bottom-color:var(--verdin)}
+.menu-btn{display:none;background:none;border:1px solid var(--linea);padding:.45rem .7rem;
+  font-family:var(--dato);font-size:.75rem;letter-spacing:.1em;color:var(--tinta);cursor:pointer}
+
+/* botones */
+.btn{display:inline-block;padding:.85rem 1.6rem;font-family:var(--dato);font-size:.8rem;
+  letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid var(--verdin);
+  background:none;cursor:pointer;transition:background .18s,color .18s}
+.btn--solido{background:var(--verdin);color:#fff}
+.btn--solido:hover{background:var(--verdin-h);border-color:var(--verdin-h)}
+.btn--linea{color:var(--verdin)}
+.btn--linea:hover{background:var(--verdin);color:#fff}
+.btn--claro{border-color:#fff;color:#fff}
+.btn--claro:hover{background:#fff;color:var(--tinta)}
+.botonera{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.6rem}
+
+/* marcador de foto */
+.foto{position:relative;background:
+   repeating-linear-gradient(135deg,#1f4a5c,#1f4a5c 14px,#1c4453 14px,#1c4453 28px);
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem}
+.foto::after{content:attr(data-foto);font-family:var(--dato);font-size:.7rem;letter-spacing:.12em;
+  text-transform:uppercase;color:#c9bda6;line-height:1.6}
+.foto--43{aspect-ratio:4/3}
+.foto--real{background-repeat:no-repeat;background-position:center;background-size:cover}
+.foto--real::after{display:none}
+
+/* portada */
+.portada{position:relative;min-height:clamp(430px,72vh,640px);display:grid}
+.portada .foto{grid-area:1/1;width:100%;height:100%}
+.portada__velo{grid-area:1/1;background:linear-gradient(180deg,rgba(20,38,46,.2),rgba(20,38,46,.78))}
+.portada__texto{grid-area:1/1;align-self:end;padding-bottom:clamp(2.5rem,6vw,4.5rem);color:#fff}
+.portada__texto h1{color:#fff;margin-bottom:.35em;text-wrap:balance}
+.portada__texto p{font-size:1.15rem;color:#e8eeec;max-width:46ch}
+.portada .eyebrow{color:var(--arena)}
+.portada--corta{min-height:clamp(280px,42vh,400px)}
+
+/* rejillas */
+.rejilla{display:grid;gap:1.6rem}
+.rejilla--2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.rejilla--3{grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.tarjeta{background:var(--papel);border:1px solid var(--linea);overflow:hidden;margin:0}
+.tarjeta figcaption{padding:.9rem 1.1rem}
+.tarjeta h3{font-size:1.05rem;margin:0 0 .15rem}
+.tarjeta p{font-size:.9rem;color:var(--gris);margin:0}
+
+/* listas */
+.datos{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+.datos li{display:flex;gap:.7rem;align-items:baseline;padding-bottom:.55rem;border-bottom:1px solid var(--linea)}
+.datos li::before{content:"—";color:var(--verdin);font-family:var(--dato)}
+.datos--cols{grid-template-columns:repeat(auto-fit,minmax(210px,1fr));column-gap:2rem}
+
+/* tarifas */
+.tarifa{background:var(--papel);border:1px solid var(--linea);padding:1.8rem}
+.tarifa--cerrado{background:none;border-style:dashed;color:var(--gris)}
+.tarifa__temporada{font-family:var(--dato);font-size:.74rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--verdin);margin:0 0 .8rem}
+.tarifa__precio{font-family:var(--display);font-size:2.6rem;line-height:1;margin:0}
+.tarifa__precio small{font-family:var(--texto);font-size:.95rem;color:var(--gris);letter-spacing:0}
+.tarifa__nota{font-size:.9rem;color:var(--gris);margin:.9rem 0 0}
+.tarifa--cerrado .tarifa__precio{font-size:1.6rem;color:var(--gris)}
+
+/* faq */
+.faq{border-top:1px solid var(--linea);max-width:60rem}
+.faq details{border-bottom:1px solid var(--linea)}
+.faq summary{cursor:pointer;padding:1.05rem 0;list-style:none;font-family:var(--display);
+  font-size:1.12rem;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--verdin);font-family:var(--dato);font-size:1.3rem}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 0 1.2rem;color:var(--gris);margin:0}
+
+/* contacto */
+.contacto__bloque{margin-bottom:2.2rem}
+.contacto__bloque a{display:block;font-family:var(--display);font-size:1.35rem;
+  color:var(--tinta);text-decoration:none;padding:.2rem 0}
+.contacto__bloque a:hover{color:var(--verdin);text-decoration:underline}
+.plataformas{display:flex;flex-wrap:wrap;gap:.8rem;list-style:none;padding:0;margin:0}
+.plataformas a{display:inline-block;padding:.65rem 1.2rem;border:1px solid var(--linea);
+  background:var(--papel);text-decoration:none;color:var(--tinta);font-size:.95rem}
+.plataformas a:hover{border-color:var(--verdin);color:var(--verdin)}
+
+/* cierre y pie */
+.cierre{background:var(--ria);color:#fff;text-align:center}
+.cierre h2{color:#fff}
+.cierre p{color:#d5e2e0;margin-inline:auto}
+.cierre .botonera{justify-content:center}
+.pie{background:var(--tinta);color:#b9c7c9;padding:3rem 0 2rem;font-size:.92rem}
+.pie a{color:#e2eae9}
+.pie__rejilla{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.pie h2{font-family:var(--display);font-size:1.05rem;color:#fff;margin:0 0 .7rem}
+.pie ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
+.pie__legal{border-top:1px solid rgba(255,255,255,.14);margin-top:2.2rem;padding-top:1.2rem;
+  display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:.82rem}
+.pie__legal ul{display:flex;flex-wrap:wrap;gap:1.1rem}
+
+/* pendientes */
+.pdte{background:#fff6e0;border-left:3px solid #d9a441;padding:.75rem 1rem;
+  font-size:.88rem;color:#7a5a12;margin:1rem 0;max-width:60ch}
+
+.pagina{display:none}
+.pagina.visible{display:block}
+
+@media (max-width:760px){
+  .menu-btn{display:block}
+  .nav{display:none;width:100%}
+  .nav.abierto{display:block}
+  .cabecera__fila{flex-wrap:wrap}
+  .nav ul{flex-direction:column;gap:0;padding:.5rem 0 .8rem}
+  .nav button{display:block;width:100%;text-align:left;padding:.7rem 0;
+    border-bottom:1px solid var(--linea)}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="saltar" href="#principal">Ir al contenido</a>
+
+<header class="cabecera">
+  <div class="contenedor cabecera__fila">
+    <button class="marca" data-ir="inicio">MarinaMar <span>Camariñas</span></button>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navPrincipal">Menú</button>
+    <nav class="nav" id="navPrincipal" aria-label="Principal">
+      <ul>
+        <li><button data-ir="inicio" class="activo">Inicio</button></li>
+        <li><button data-ir="alojamiento">Alojamiento</button></li>
+        <li><button data-ir="tarifas">Tarifas</button></li>
+        <li><button data-ir="actividades">Actividades</button></li>
+        <li><button data-ir="reservas">Reservas</button></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="principal">
+
+<!-- ============ INICIO ============ -->
+<div class="pagina visible" id="inicio">
+  <section class="portada">
+    <div class="foto" data-foto="Foto principal · Vista de la ría 1600×900" data-cms-foto="portada_inicio"></div>
+    <div class="portada__velo"></div>
+    <div class="portada__texto"><div class="contenedor">
+      <p class="eyebrow">Camariñas · Costa da Morte</p>
+      <h1 data-cms-text="titulo_inicio">La ría entra por la ventana</h1>
+      <p data-cms-text="subtitulo_inicio">Un piso completo de 140 m² para hasta siete personas, con el agua a la vista desde el salón y los faros del Atlántico a un paseo.</p>
+      <div class="botonera">
+        <button class="btn btn--solido" data-ir="reservas">Reservar</button>
+        <button class="btn btn--claro" data-ir="alojamiento">Ver el alojamiento</button>
+      </div>
+    </div></div>
+  </section>
+
+  <div class="encaje"></div>
+
+  <section class="seccion seccion--papel"><div class="contenedor">
+    <p class="eyebrow">El sitio</p>
+    <h2>Espacio de sobra para quedarse unos días</h2>
+    <p>140 m² útiles repartidos en cuatro dormitorios, dos baños y un salón comedor amplio con vistas al mar. Se alquila siempre completo, nunca por habitaciones, así que la casa es vuestra durante toda la estancia.</p>
+    <div class="rejilla rejilla--3" style="margin-top:2.5rem">
+      <figure class="tarjeta"><div class="foto foto--43" data-foto="Salón con vistas" data-cms-foto="inicio_salon"></div>
+        <figcaption><h3>Salón con vistas al mar</h3><p>El sitio donde se acaba pasando la tarde.</p></figcaption></figure>
+      <figure class="tarjeta"><div class="foto foto--43" data-foto="Dormitorio 1,50" data-cms-foto="inicio_dormitorio"></div>
+        <figcaption><h3>Cuatro dormitorios</h3><p>Hasta siete huéspedes, sin apreturas.</p></figcaption></figure>
+      <figure class="tarjeta"><div class="foto foto--43" data-foto="Cocina" data-cms-foto="inicio_cocina"></div>
+        <figcaption><h3>Cocina completa</h3><p>Lavavajillas, lavadora, secadora y horno.</p></figcaption></figure>
+    </div>
+    <div class="botonera"><button class="btn btn--linea" data-ir="alojamiento">Ver todas las estancias</button></div>
+  </div></section>
+
+  <div class="encaje"></div>
+
+  <section class="seccion"><div class="contenedor">
+    <p class="eyebrow">Alrededor</p>
+    <h2>Camariñas se recorre andando y se sale de ella por el borde del mar</h2>
+    <p>El Camiño dos Faros pasa por aquí: 200 kilómetros de sendero entre Malpica y Fisterra, siempre con el Atlántico al lado. A un rato en coche está el faro de Cabo Vilán, el primero de España con luz eléctrica. Y en el pueblo siguen trabajando las palilleiras, que mantienen vivo el encaje de bolillos.</p>
+    <div class="botonera"><button class="btn btn--linea" data-ir="actividades">Qué hacer en la zona</button></div>
+  </div></section>
+
+  <section class="seccion cierre"><div class="contenedor">
+    <h2>Consulta fechas y precio</h2>
+    <p>Reserva directa por teléfono o correo, o a través de Booking, Airbnb y Rentalia. De marzo a octubre, desde 130 € la noche.</p>
+    <div class="botonera">
+      <button class="btn btn--claro" data-ir="reservas">Ver cómo reservar</button>
+      <button class="btn btn--claro" data-ir="tarifas">Consultar tarifas</button>
+    </div>
+  </div></section>
+</div>
+
+<!-- ============ ALOJAMIENTO ============ -->
+<div class="pagina" id="alojamiento">
+  <section class="portada portada--corta">
+    <div class="foto" data-foto="Salón con vistas 1600×900" data-cms-foto="portada_alojamiento"></div>
+    <div class="portada__velo"></div>
+    <div class="portada__texto"><div class="contenedor">
+      <p class="eyebrow">El alojamiento</p>
+      <h1>Cuatro dormitorios, dos baños, 140 m²</h1>
+    </div></div>
+  </section>
+
+  <div class="encaje"></div>
+
+  <section class="seccion seccion--papel"><div class="contenedor">
+    <p class="eyebrow">Las estancias</p>
+    <h2>Habitación por habitación</h2>
+    <div class="rejilla rejilla--3" style="margin-top:2rem">
+      <figure class="tarjeta"><div class="foto foto--43" data-foto="Dormitorio 1,50" data-cms-foto="dorm_principal"></div>
+        <figcaption><h3>Dormitorio principal</h3><p>Cama de 1,50 m, con baño en la habitación.</p></figcaption></figure>
+      <figure class="tarjeta"><div class="foto foto--43" data-foto="Dormitorio 1,35" data-cms-foto="dorm_doble"></div>
+        <figcaption><h3>Dormitorio doble</h3><p>Cama de 1,35 m.</p></figcaption></figure>
+      <figure class="tarjeta"><div class="foto foto--43" data-foto="Dormitorio gemelas" data-cms-foto="dorm_gemelas"></div>
+        <figcaption><h3>Dormitorio de gemelas</h3><p>Dos camas de 1,05 m.</p></figcaption></figure>
+      <figure class="tarjeta"><div class="foto foto--43" data-foto="Dormitorio individual" data-cms-foto="dorm_individual"></div>
+        <figcaption><h3>Dormitorio individual</h3><p>Cama de 1,05 m.</p></figcaption></figure>
+      <figure class="tarjeta"><div class="foto foto--43" data-foto="Salón" data-cms-foto="salon"></div>
+        <figcaption><h3>Salón</h3><p>Zona de estar amplia.</p></figcaption></figure>
+      <figure class="tarjeta"><div class="foto foto--43" data-foto="Salón comedor" data-cms-foto="salon_comedor"></div>
+        <figcaption><h3>Salón comedor</h3><p>Mesa para comer todos juntos.</p></figcaption></figure>
+      <figure class="tarjeta"><div class="foto foto--43" data-foto="Cocina" data-cms-foto="cocina"></div>
+        <figcaption><h3>Cocina</h3><p>Equipada y con vajilla completa.</p></figcaption></figure>
+      <figure class="tarjeta"><div class="foto foto--43" data-foto="Baño del pasillo" data-cms-foto="bano_pasillo"></div>
+        <figcaption><h3>Baño del pasillo</h3><p>De uso común.</p></figcaption></figure>
+      <figure class="tarjeta"><div class="foto foto--43" data-foto="Baño en dormitorio" data-cms-foto="bano_dormitorio"></div>
+        <figcaption><h3>Baño en el dormitorio principal</h3><p>Privado.</p></figcaption></figure>
+    </div>
+  </div></section>
+
+  <div class="encaje"></div>
+
+  <section class="seccion"><div class="contenedor">
+    <div class="rejilla rejilla--2">
+      <div>
+        <p class="eyebrow">Distribución</p>
+        <h2>Qué hay</h2>
+        <ul class="datos">
+          <li>4 dormitorios</li><li>1 cama de 1,50 m</li><li>1 cama de 1,35 m</li>
+          <li>2 camas gemelas de 1,05 m</li><li>1 cama individual de 1,05 m</li>
+          <li>2 baños</li><li>Salón comedor amplio</li><li>7 huéspedes como máximo</li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">Servicios</p>
+        <h2>Qué está incluido</h2>
+        <ul class="datos datos--cols">
+          <li>Wifi de alta velocidad</li><li>Ropa de cama</li><li>Toallas</li><li>Secador de pelo</li>
+          <li>Televisor</li><li>Cocina vitrocerámica</li><li>Horno</li><li>Microondas</li>
+          <li>Nevera</li><li>Cafetera italiana</li><li>Lavavajillas</li><li>Lavadora</li><li>Secadora</li>
+        </ul>
+      </div>
+    </div>
+  </div></section>
+
+  <div class="encaje"></div>
+
+  <section class="seccion seccion--papel"><div class="contenedor">
+    <p class="eyebrow">Ubicación</p>
+    <h2>Dónde está</h2>
+    <p>En Camariñas, provincia de A Coruña, en plena Costa da Morte.</p>
+    <div class="pdte">Aquí va el mapa de Google Maps incrustado. Falta la dirección exacta para generarlo.</div>
+  </div></section>
+
+  <section class="seccion"><div class="contenedor">
+    <p class="eyebrow">Dudas habituales</p>
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq">
+      <details><summary>¿Qué servicios ofrecen?</summary><p>El alojamiento está completamente amueblado e incluye ropa de cama, toallas, vajilla y todo lo necesario para una estancia cómoda.</p></details>
+      <details><summary>¿Cómo se reserva?</summary><p>Puedes llamarnos o escribirnos un correo para reservar directamente. También estamos en Booking, Airbnb y Rentalia.</p></details>
+      <details><summary>¿Se alquila por habitaciones?</summary><p>No. Se alquila el piso completo, para un máximo de 7 personas.</p></details>
+      <details><summary>¿Se admiten mascotas?</summary><p>No se admiten mascotas.</p></details>
+      <details><summary>¿Qué hay para hacer cerca?</summary><p>Rutas de senderismo, playas y miradores. En verano hay fiestas tradicionales y gastronómicas por toda la Costa da Morte.</p></details>
+    </div>
+  </div></section>
+
+  <section class="seccion cierre"><div class="contenedor">
+    <h2>¿Te encaja?</h2>
+    <p>Consulta disponibilidad y reserva directamente con nosotros.</p>
+    <div class="botonera">
+      <button class="btn btn--claro" data-ir="reservas">Reservar</button>
+      <button class="btn btn--claro" data-ir="tarifas">Ver tarifas</button>
+    </div>
+  </div></section>
+</div>
+
+<!-- ============ TARIFAS ============ -->
+<div class="pagina" id="tarifas">
+  <section class="seccion"><div class="contenedor">
+    <p class="eyebrow">Precios</p>
+    <h1>Tarifas por temporada</h1>
+    <p>El precio es por noche y por el piso completo, para un máximo de siete personas. No se alquila por habitaciones.</p>
+    <div class="rejilla rejilla--3" style="margin-top:2.5rem">
+      <div class="tarifa">
+        <p class="tarifa__temporada">Temporada alta</p>
+        <p class="tarifa__precio"><span data-cms-text="precio_alta">160 €</span> <small>/ noche</small></p>
+        <p class="tarifa__nota">Semana Santa, julio y agosto.<br>Descuento del 15 % en estancias de una semana.</p>
+      </div>
+      <div class="tarifa">
+        <p class="tarifa__temporada">Temporada media</p>
+        <p class="tarifa__precio"><span data-cms-text="precio_media">130 €</span> <small>/ noche</small></p>
+        <p class="tarifa__nota">Marzo, abril, mayo, junio, septiembre y octubre.<br>Descuento del 15 % en estancias de una semana.</p>
+      </div>
+      <div class="tarifa tarifa--cerrado">
+        <p class="tarifa__temporada">Temporada cerrada</p>
+        <p class="tarifa__precio">Cerrado</p>
+        <p class="tarifa__nota">Enero, febrero, noviembre y diciembre.</p>
+      </div>
+    </div>
+    <div class="botonera"><button class="btn btn--solido" data-ir="reservas">Consultar disponibilidad</button></div>
+  </div></section>
+
+  <div class="encaje"></div>
+
+  <section class="seccion seccion--papel"><div class="contenedor">
+    <p class="eyebrow">Letra pequeña</p>
+    <h2>Condiciones</h2>
+    <ul class="datos" style="max-width:52rem">
+      <li>El descuento del 15 % se aplica a estancias de siete noches o más.</li>
+      <li>Se alquila siempre el piso completo, nunca por habitaciones.</li>
+      <li>Capacidad máxima: 7 personas.</li>
+      <li>No se admiten mascotas.</li>
+    </ul>
+    <div class="pdte">Faltan por definir: horario de entrada y salida, fianza y política de cancelación.</div>
+  </div></section>
+
+  <section class="seccion cierre"><div class="contenedor">
+    <h2>Reserva directa, sin comisiones</h2>
+    <p>Escríbenos o llámanos y te confirmamos las fechas.</p>
+    <div class="botonera"><button class="btn btn--claro" data-ir="reservas">Cómo reservar</button></div>
+  </div></section>
+</div>
+
+<!-- ============ ACTIVIDADES ============ -->
+<div class="pagina" id="actividades">
+  <section class="portada portada--corta">
+    <div class="foto" data-foto="Faro de Cabo Vilán 1600×900" data-cms-foto="portada_actividades"></div>
+    <div class="portada__velo"></div>
+    <div class="portada__texto"><div class="contenedor">
+      <p class="eyebrow">Alrededor</p>
+      <h1>Actividades y visitas en la zona</h1>
+    </div></div>
+  </section>
+
+  <div class="encaje"></div>
+
+  <section class="seccion seccion--papel"><div class="contenedor">
+    <p>Faros, playas, senderos, verbenas y una gastronomía que justifica el viaje por sí sola. Esto es lo que tienes a mano desde el alojamiento.</p>
+    <div class="rejilla rejilla--2" style="margin-top:2.5rem">
+      <article>
+        <p class="eyebrow">Senderismo</p><h2>O Camiño dos Faros</h2>
+        <p>Doscientos kilómetros de sendero entre Malpica y Fisterra, siempre por el borde del mar. Pasa por todos los faros y por los puntos más señalados de la Costa da Morte. Se puede hacer entero o por etapas sueltas, saliendo desde aquí.</p>
+        <p><a href="https://www.caminodosfaros.com/" rel="noopener">caminodosfaros.com</a></p>
+      </article>
+      <article>
+        <p class="eyebrow">Patrimonio</p><h2>Faro de Cabo Vilán</h2>
+        <p>El primero de España con luz eléctrica, encaramado sobre los acantilados. Las vistas del Atlántico desde arriba son el mejor sitio de la zona para ver caer la tarde.</p>
+      </article>
+      <article>
+        <p class="eyebrow">Artesanía</p><h2>El encaje de bolillos</h2>
+        <p>Camariñas es el centro del encaje de palillos. Las palilleiras siguen tejiendo a mano manteles, colchas y trajes de novia que salen de aquí para todo el mundo. Se puede ver el trabajo en directo en los talleres del pueblo y llevarse una pieza.</p>
+        <p><a href="https://mostra.es/es/" rel="noopener">Mostra do Encaixe</a></p>
+      </article>
+      <article>
+        <p class="eyebrow">Verano</p><h2>Fiestas y verbenas</h2>
+        <p>De junio a septiembre no para: romerías, ferias, fiestas gastronómicas y verbenas con las mejores orquestas de Galicia. Cada concello de la Costa da Morte tiene su calendario.</p>
+      </article>
+      <article>
+        <p class="eyebrow">Mesa</p><h2>Comer aquí</h2>
+        <p>Pulpo, marisco y pescado descargado el mismo día. Los restaurantes del pueblo trabajan producto de la ría sin más complicaciones, que es justo lo que hay que buscar.</p>
+      </article>
+      <article>
+        <p class="eyebrow">Información</p><h2>Guías de la zona</h2>
+        <p>Para planificar el viaje con más detalle, estas dos páginas recogen rutas, playas y agenda actualizada.</p>
+        <p><a href="https://guia.turismocamarinas.net/es/inicio" rel="noopener">Turismo de Camariñas</a><br>
+           <a href="https://visitacostadamorte.com/concellos/camarinas" rel="noopener">Visita Costa da Morte</a></p>
+      </article>
+    </div>
+  </div></section>
+
+  <section class="seccion cierre"><div class="contenedor">
+    <h2>Ven a verlo</h2>
+    <p>El alojamiento está a un paso de todo esto.</p>
+    <div class="botonera">
+      <button class="btn btn--claro" data-ir="reservas">Reservar</button>
+      <button class="btn btn--claro" data-ir="alojamiento">Ver el alojamiento</button>
+    </div>
+  </div></section>
+</div>
+
+<!-- ============ RESERVAS ============ -->
+<div class="pagina" id="reservas">
+  <section class="seccion"><div class="contenedor">
+    <p class="eyebrow">Contacto</p>
+    <h1>Reserva directa</h1>
+    <p>Llámanos o escríbenos y te confirmamos las fechas. Reservando con nosotros no hay comisión de plataforma.</p>
+    <div class="rejilla rejilla--2" style="margin-top:2.5rem">
+      <div>
+        <div class="contacto__bloque">
+          <p class="eyebrow">Teléfono</p>
+          <a href="tel:+34678435840" data-cms-text="telefono1">+34 678 43 58 40</a>
+          <a href="tel:+34678435851" data-cms-text="telefono2">+34 678 43 58 51</a>
+        </div>
+        <div class="contacto__bloque">
+          <p class="eyebrow">WhatsApp</p>
+          <a href="https://wa.me/34678435840?text=Hola%2C%20quer%C3%ADa%20consultar%20disponibilidad%20en%20MarinaMar%20Camari%C3%B1as" rel="noopener" data-cms-href="whatsapp">Escribir por WhatsApp</a>
+        </div>
+        <div class="contacto__bloque">
+          <p class="eyebrow">Correo</p>
+          <a href="mailto:marinamarcamarinas@gmail.com" data-cms-text="correo1">marinamarcamarinas@gmail.com</a>
+          <a href="mailto:marinamarcamarinas@outlook.com" data-cms-text="correo2">marinamarcamarinas@outlook.com</a>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">También estamos en</p>
+        <h2>Plataformas de reserva</h2>
+        <p>Si prefieres reservar por una plataforma, el alojamiento está publicado aquí:</p>
+        <ul class="plataformas">
+          <li><a href="https://www.booking.com/hotel/es/piso-marina-camarinas.es.html" rel="noopener" data-cms-href="booking">Booking</a></li>
+          <li><a href="#" rel="noopener" data-cms-href="airbnb">Airbnb</a></li>
+          <li><a href="#" rel="noopener" data-cms-href="rentalia">Rentalia</a></li>
+        </ul>
+        <div class="pdte">Faltan las direcciones reales de los anuncios de Airbnb y Rentalia.</div>
+      </div>
+    </div>
+  </div></section>
+
+  <div class="encaje"></div>
+
+  <section class="seccion seccion--papel"><div class="contenedor">
+    <p class="eyebrow">Antes de escribir</p>
+    <h2>Lo básico</h2>
+    <ul class="datos" style="max-width:52rem">
+      <li>Se alquila el piso completo, para un máximo de 7 personas.</li>
+      <li>No se alquila por habitaciones.</li>
+      <li>No se admiten mascotas.</li>
+      <li>Abierto de marzo a octubre. Cerrado en enero, febrero, noviembre y diciembre.</li>
+      <li>De 130 € a 160 € la noche según temporada, con 15 % de descuento por semana.</li>
+    </ul>
+    <div class="botonera"><button class="btn btn--linea" data-ir="tarifas">Ver tarifas completas</button></div>
+  </div></section>
+</div>
+
+</main>
+
+<footer class="pie"><div class="contenedor">
+  <div class="pie__rejilla">
+    <div>
+      <h2>MarinaMar Camariñas</h2>
+      <p>Alojamiento completo de 140 m² con vistas a la ría, en el corazón de la Costa da Morte.</p>
+    </div>
+    <div>
+      <h2>Contacto</h2>
+      <ul>
+        <li><a href="tel:+34678435840">+34 678 43 58 40</a></li>
+        <li><a href="tel:+34678435851">+34 678 43 58 51</a></li>
+        <li><a href="mailto:marinamarcamarinas@gmail.com">marinamarcamarinas@gmail.com</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Páginas</h2>
+      <ul>
+        <li><a href="#" data-ir="alojamiento">Alojamiento</a></li>
+        <li><a href="#" data-ir="tarifas">Tarifas</a></li>
+        <li><a href="#" data-ir="actividades">Actividades</a></li>
+        <li><a href="#" data-ir="reservas">Reservas</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pie__legal">
+    <p>© 2026 MarinaMar Camariñas · Registro REAT: pendiente</p>
+    <ul>
+      <li><a href="#">Aviso legal</a></li>
+      <li><a href="#">Privacidad</a></li>
+      <li><a href="#">Cookies</a></li>
+    </ul>
+  </div>
+</div></footer>
+
+<script>
+(function(){
+  var nav = document.getElementById('navPrincipal');
+  var menuBtn = document.getElementById('menuBtn');
+  menuBtn.addEventListener('click', function(){
+    var abierto = nav.classList.toggle('abierto');
+    menuBtn.setAttribute('aria-expanded', abierto);
+  });
+
+  function ir(id){
+    document.querySelectorAll('.pagina').forEach(function(p){
+      p.classList.toggle('visible', p.id === id);
+    });
+    document.querySelectorAll('.nav button').forEach(function(b){
+      b.classList.toggle('activo', b.dataset.ir === id);
+    });
+    nav.classList.remove('abierto');
+    menuBtn.setAttribute('aria-expanded', false);
+    window.scrollTo({top:0, behavior:'instant'});
+  }
+
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('[data-ir]');
+    if(!t) return;
+    e.preventDefault();
+    ir(t.dataset.ir);
+  });
+})();
+</script>
+<script src="js/content-loader.js"></script>
+<script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on('init', function (user) {
+    if (!user) {
+      window.netlifyIdentity.on('login', function () {
+        document.location.href = '/admin/';
+      });
+    }
+  });
+}
+</script>
+</body>
+</html>
