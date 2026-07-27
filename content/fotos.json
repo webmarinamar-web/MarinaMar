@@ -1,17 +1,6 @@
 {
   "portada_inicio": "",
-  "inicio_salon": "",
-  "inicio_dormitorio": "",
-  "inicio_cocina": "",
   "portada_alojamiento": "",
-  "dorm_principal": "",
-  "dorm_doble": "",
-  "dorm_gemelas": "",
-  "dorm_individual": "",
-  "salon": "",
-  "salon_comedor": "",
-  "cocina": "",
-  "bano_pasillo": "",
-  "bano_dormitorio": "",
-  "portada_actividades": ""
+  "portada_actividades": "",
+  "logo": ""
 }
