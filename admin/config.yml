@@ -62,6 +62,9 @@ collections:
               - { label: "Correo 2", name: "correo2", widget: "string" }
               - { label: "Descripción en el pie", name: "pie_descripcion", widget: "text" }
               - { label: "Copyright / REAT (pie)", name: "pie_copyright", widget: "string" }
+              - { label: "Texto: Aviso legal", name: "legal_texto", widget: "text" }
+              - { label: "Texto: Política de privacidad", name: "privacidad_texto", widget: "text" }
+              - { label: "Texto: Política de cookies", name: "cookies_texto", widget: "text" }
           - label: "Enlaces"
             name: "enlaces"
             widget: "object"
