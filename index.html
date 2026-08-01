@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MarinaMar Camariñas — maqueta completa</title>
+<title>Apartamento en alquiler en Camariñas | MarinaMar - Costa da Morte</title>
+<meta name="description" content="Alquiler vacacional en Camariñas, A Coruña. Piso de 140 m², 4 dormitorios, vistas a la ría, para hasta 7 personas. Reserva directa sin comisiones.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Karla:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -201,8 +202,8 @@ p{margin:0 0 1.1em;max-width:68ch}
     <div class="portada__velo"></div>
     <div class="portada__texto"><div class="contenedor">
       <p class="eyebrow">Camariñas · Costa da Morte</p>
-      <h1 data-cms-text="titulo_inicio">La ría entra por la ventana</h1>
-      <p data-cms-text="subtitulo_inicio">Un piso completo de 140 m² para hasta siete personas, con el agua a la vista desde el salón y los faros del Atlántico a un paseo.</p>
+      <h1 data-cms-text="titulo_inicio">Apartamento en alquiler en Camariñas, Costa da Morte</h1>
+      <p data-cms-text="subtitulo_inicio">Piso completo de 140 m² con vistas al mar, para hasta 7 personas. Alquiler vacacional en pleno centro de Camariñas, cerca de los principales faros y playas de la Costa da Morte.</p>
       <div class="botonera">
         <button class="btn btn--solido" data-ir="reservas">Reservar</button>
         <button class="btn btn--claro" data-ir="alojamiento">Ver el alojamiento</button>
@@ -281,7 +282,10 @@ p{margin:0 0 1.1em;max-width:68ch}
     <p class="eyebrow">Ubicación</p>
     <h2>Dónde está</h2>
     <p data-cms-text="alojamiento_ubicacion_texto">En Camariñas, provincia de A Coruña, en plena Costa da Morte.</p>
-    <div class="pdte" data-cms-text="alojamiento_ubicacion_pendiente">Aquí va el mapa de Google Maps incrustado. Falta la dirección exacta para generarlo.</div>
+    <div id="mapa-ubicacion" style="display:none;margin-top:1.5rem;aspect-ratio:16/9;max-width:800px">
+      <iframe id="mapa-iframe" style="width:100%;height:100%;border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="pdte" id="mapa-pendiente" data-cms-text="alojamiento_ubicacion_pendiente">Aquí va el mapa de Google Maps incrustado. Falta la dirección exacta para generarlo.</div>
   </div></section>
 
   <section class="seccion"><div class="contenedor">
