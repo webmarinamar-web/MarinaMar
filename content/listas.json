@@ -1,19 +1,67 @@
 {
   "inicio_destacados": [
-    { "titulo": "Salón con vistas al mar", "descripcion": "El sitio donde se acaba pasando la tarde.", "foto": "" },
-    { "titulo": "Cuatro dormitorios", "descripcion": "Hasta siete huéspedes, sin apreturas.", "foto": "" },
-    { "titulo": "Cocina completa", "descripcion": "Lavavajillas, lavadora, secadora y horno.", "foto": "" }
+    {
+      "titulo": "Salón con vistas al mar",
+      "descripcion": "El sitio donde se acaba pasando la tarde.",
+      "foto": "images/whatsapp-image-2026-08-01-at-11.35.01-4-.jpeg"
+    },
+    {
+      "titulo": "Cuatro dormitorios",
+      "descripcion": "Hasta siete huéspedes, sin apreturas.",
+      "foto": "images/whatsapp-image-2026-08-01-at-11.35.01-6-.jpeg"
+    },
+    {
+      "titulo": "Cocina completa",
+      "descripcion": "Lavavajillas, lavadora, secadora y horno.",
+      "foto": "images/whatsapp-image-2026-08-01-at-11.35.03-4-.jpeg"
+    }
   ],
   "habitaciones": [
-    { "titulo": "Dormitorio principal", "descripcion": "Cama de 1,50 m, con baño en la habitación.", "foto": "" },
-    { "titulo": "Dormitorio doble", "descripcion": "Cama de 1,35 m.", "foto": "" },
-    { "titulo": "Dormitorio de gemelas", "descripcion": "Dos camas de 1,05 m.", "foto": "" },
-    { "titulo": "Dormitorio individual", "descripcion": "Cama de 1,05 m.", "foto": "" },
-    { "titulo": "Salón", "descripcion": "Zona de estar amplia.", "foto": "" },
-    { "titulo": "Salón comedor", "descripcion": "Mesa para comer todos juntos.", "foto": "" },
-    { "titulo": "Cocina", "descripcion": "Equipada y con vajilla completa.", "foto": "" },
-    { "titulo": "Baño del pasillo", "descripcion": "De uso común.", "foto": "" },
-    { "titulo": "Baño en el dormitorio principal", "descripcion": "Privado.", "foto": "" }
+    {
+      "titulo": "Dormitorio principal",
+      "descripcion": "Cama de 1,50 m, con baño en la habitación.",
+      "foto": "images/whatsapp-image-2026-08-01-at-11.35.01-6-.jpeg"
+    },
+    {
+      "titulo": "Dormitorio doble",
+      "descripcion": "Cama de 1,35 m.",
+      "foto": "images/whatsapp-image-2026-08-01-at-11.35.01-8-.jpeg"
+    },
+    {
+      "titulo": "Dormitorio de gemelas",
+      "descripcion": "Dos camas de 1,05 m.",
+      "foto": "images/whatsapp-image-2026-08-01-at-11.35.01-10-.jpeg"
+    },
+    {
+      "titulo": "Dormitorio individual",
+      "descripcion": "Cama de 1,05 m.",
+      "foto": "images/whatsapp-image-2026-08-01-at-11.35.03.jpeg"
+    },
+    {
+      "titulo": "Salón",
+      "descripcion": "Zona de estar amplia.",
+      "foto": "images/whatsapp-image-2026-08-01-at-11.35.03-2-.jpeg"
+    },
+    {
+      "titulo": "Salón comedor",
+      "descripcion": "Mesa para comer todos juntos.",
+      "foto": "images/whatsapp-image-2026-08-01-at-11.35.03-3-.jpeg"
+    },
+    {
+      "titulo": "Cocina",
+      "descripcion": "Equipada y con vajilla completa.",
+      "foto": "images/whatsapp-image-2026-08-01-at-11.35.03-4-.jpeg"
+    },
+    {
+      "titulo": "Baño del pasillo",
+      "descripcion": "De uso común.",
+      "foto": "images/whatsapp-image-2026-08-01-at-11.35.03-5-.jpeg"
+    },
+    {
+      "titulo": "Baño en el dormitorio principal",
+      "descripcion": "Privado.",
+      "foto": "images/whatsapp-image-2026-08-01-at-11.35.03-6-.jpeg"
+    }
   ],
   "distribucion": [
     "4 dormitorios",
@@ -41,11 +89,26 @@
     "Secadora"
   ],
   "faq": [
-    { "pregunta": "¿Qué servicios ofrecen?", "respuesta": "El alojamiento está completamente amueblado e incluye ropa de cama, toallas, vajilla y todo lo necesario para una estancia cómoda." },
-    { "pregunta": "¿Cómo se reserva?", "respuesta": "Puedes llamarnos o escribirnos un correo para reservar directamente. También estamos en Booking, Airbnb y Rentalia." },
-    { "pregunta": "¿Se alquila por habitaciones?", "respuesta": "No. Se alquila el piso completo, para un máximo de 7 personas." },
-    { "pregunta": "¿Se admiten mascotas?", "respuesta": "No se admiten mascotas." },
-    { "pregunta": "¿Qué hay para hacer cerca?", "respuesta": "Rutas de senderismo, playas y miradores. En verano hay fiestas tradicionales y gastronómicas por toda la Costa da Morte." }
+    {
+      "pregunta": "¿Qué servicios ofrecen?",
+      "respuesta": "El alojamiento está completamente amueblado e incluye ropa de cama, toallas, vajilla y todo lo necesario para una estancia cómoda."
+    },
+    {
+      "pregunta": "¿Cómo se reserva?",
+      "respuesta": "Puedes llamarnos o escribirnos un correo para reservar directamente. También estamos en Booking, Airbnb y Rentalia."
+    },
+    {
+      "pregunta": "¿Se alquila por habitaciones?",
+      "respuesta": "No. Se alquila el piso completo, para un máximo de 7 personas."
+    },
+    {
+      "pregunta": "¿Se admiten mascotas?",
+      "respuesta": "No se admiten mascotas."
+    },
+    {
+      "pregunta": "¿Qué hay para hacer cerca?",
+      "respuesta": "Rutas de senderismo, playas y miradores. En verano hay fiestas tradicionales y gastronómicas por toda la Costa da Morte."
+    }
   ],
   "condiciones": [
     "El descuento del 15 % se aplica a estancias de siete noches o más.",
@@ -54,12 +117,60 @@
     "No se admiten mascotas."
   ],
   "actividades": [
-    { "eyebrow": "Senderismo", "titulo": "O Camiño dos Faros", "texto": "Doscientos kilómetros de sendero entre Malpica y Fisterra, siempre por el borde del mar. Pasa por todos los faros y por los puntos más señalados de la Costa da Morte. Se puede hacer entero o por etapas sueltas, saliendo desde aquí.", "enlace_texto": "caminodosfaros.com", "enlace_url": "https://www.caminodosfaros.com/", "enlace2_texto": "", "enlace2_url": "" },
-    { "eyebrow": "Patrimonio", "titulo": "Faro de Cabo Vilán", "texto": "El primero de España con luz eléctrica, encaramado sobre los acantilados. Las vistas del Atlántico desde arriba son el mejor sitio de la zona para ver caer la tarde.", "enlace_texto": "", "enlace_url": "", "enlace2_texto": "", "enlace2_url": "" },
-    { "eyebrow": "Artesanía", "titulo": "El encaje de bolillos", "texto": "Camariñas es el centro del encaje de palillos. Las palilleiras siguen tejiendo a mano manteles, colchas y trajes de novia que salen de aquí para todo el mundo. Se puede ver el trabajo en directo en los talleres del pueblo y llevarse una pieza.", "enlace_texto": "Mostra do Encaixe", "enlace_url": "https://mostra.es/es/", "enlace2_texto": "", "enlace2_url": "" },
-    { "eyebrow": "Verano", "titulo": "Fiestas y verbenas", "texto": "De junio a septiembre no para: romerías, ferias, fiestas gastronómicas y verbenas con las mejores orquestas de Galicia. Cada concello de la Costa da Morte tiene su calendario.", "enlace_texto": "", "enlace_url": "", "enlace2_texto": "", "enlace2_url": "" },
-    { "eyebrow": "Mesa", "titulo": "Comer aquí", "texto": "Pulpo, marisco y pescado descargado el mismo día. Los restaurantes del pueblo trabajan producto de la ría sin más complicaciones, que es justo lo que hay que buscar.", "enlace_texto": "", "enlace_url": "", "enlace2_texto": "", "enlace2_url": "" },
-    { "eyebrow": "Información", "titulo": "Guías de la zona", "texto": "Para planificar el viaje con más detalle, estas dos páginas recogen rutas, playas y agenda actualizada.", "enlace_texto": "Turismo de Camariñas", "enlace_url": "https://guia.turismocamarinas.net/es/inicio", "enlace2_texto": "Visita Costa da Morte", "enlace2_url": "https://visitacostadamorte.com/concellos/camarinas" }
+    {
+      "eyebrow": "Senderismo",
+      "titulo": "O Camiño dos Faros",
+      "texto": "Doscientos kilómetros de sendero entre Malpica y Fisterra, siempre por el borde del mar. Pasa por todos los faros y por los puntos más señalados de la Costa da Morte. Se puede hacer entero o por etapas sueltas, saliendo desde aquí.",
+      "enlace_texto": "Camino dos Faros",
+      "enlace_url": "https://www.caminodosfaros.com/",
+      "enlace2_texto": "https://www.turismo.gal/que-facer/escenarios-ao-volante/25-rutas/mar-infinito/circular-de-camarinas?langId=gl_ES",
+      "enlace2_url": ""
+    },
+    {
+      "eyebrow": "Patrimonio",
+      "titulo": "Faro de Cabo Vilán",
+      "texto": "El primero de España con luz eléctrica, encaramado sobre los acantilados. Las vistas del Atlántico desde arriba son el mejor sitio de la zona para ver caer la tarde.",
+      "enlace_texto": "Turismo de Galicia - Cabo Vilán",
+      "enlace_url": "https://www.turismo.gal/recurso/-/detalle/269616268/cabo-vilan?langId=gl_ES&tp=1&ctre=383",
+      "enlace2_texto": "",
+      "enlace2_url": ""
+    },
+    {
+      "eyebrow": "Artesanía",
+      "titulo": "El encaje de bolillos",
+      "texto": "Camariñas es el centro del encaje de palillos. Las palilleiras siguen tejiendo a mano manteles, colchas y trajes de novia que salen de aquí para todo el mundo. Se puede ver el trabajo en directo en los talleres del pueblo y llevarse una pieza.",
+      "enlace_texto": "Mostra do Encaixe",
+      "enlace_url": "https://mostra.es/es/",
+      "enlace2_texto": "",
+      "enlace2_url": ""
+    },
+    {
+      "eyebrow": "Verano",
+      "titulo": "Fiestas y verbenas",
+      "texto": "De junio a septiembre no para: romerías, ferias, fiestas gastronómicas y verbenas con las mejores orquestas de Galicia. Cada concello de la Costa da Morte tiene su calendario.",
+      "enlace_texto": "Fiestas de Camariñas",
+      "enlace_url": "https://festigaleiros.com/gl/festas-en-camarinas/",
+      "enlace2_texto": "",
+      "enlace2_url": ""
+    },
+    {
+      "eyebrow": "Mesa",
+      "titulo": "Comer aquí",
+      "texto": "Pulpo, marisco y pescado descargado el mismo día. Los restaurantes del pueblo trabajan producto de la ría sin más complicaciones, que es justo lo que hay que buscar.",
+      "enlace_texto": "Los 10 mejores restaurantes",
+      "enlace_url": "https://www.tripadvisor.es/Restaurants-g815522-Camarinas_Province_of_A_Coruna_Galicia.html",
+      "enlace2_texto": "",
+      "enlace2_url": ""
+    },
+    {
+      "eyebrow": "Información",
+      "titulo": "Guías de la zona",
+      "texto": "Para planificar el viaje con más detalle, estas dos páginas recogen rutas, playas y agenda actualizada.",
+      "enlace_texto": "Turismo de Camariñas",
+      "enlace_url": "https://guia.turismocamarinas.net/es/inicio",
+      "enlace2_texto": "Visita Costa da Morte",
+      "enlace2_url": "https://visitacostadamorte.com/concellos/camarinas"
+    }
   ],
   "lo_basico": [
     "Se alquila el piso completo, para un máximo de 7 personas.",
