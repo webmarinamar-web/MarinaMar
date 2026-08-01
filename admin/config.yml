@@ -2,7 +2,7 @@ backend:
   name: github
   repo: webmarinamar-web/MarinaMar
   branch: main
-  base_url: https://api.netlify.com
+  base_url: https://marinamar-oauth.webmarinamar.workers.dev
   auth_endpoint: auth
 
 media_folder: "images"
