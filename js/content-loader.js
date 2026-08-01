@@ -24,6 +24,16 @@
       if (!valor) return;
       el.innerHTML = esc(valor).replace(/\n/g, '<br>');
     });
+    if (textos.mapa_src) {
+      var mapaCont = document.getElementById('mapa-ubicacion');
+      var mapaFrame = document.getElementById('mapa-iframe');
+      var mapaPend = document.getElementById('mapa-pendiente');
+      if (mapaCont && mapaFrame) {
+        mapaFrame.src = textos.mapa_src;
+        mapaCont.style.display = 'block';
+      }
+      if (mapaPend) mapaPend.style.display = 'none';
+    }
   }
 
   function aplicarEnlaces(enlaces) {
