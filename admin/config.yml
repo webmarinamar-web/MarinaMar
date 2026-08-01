@@ -34,6 +34,7 @@ collections:
               - { label: "Texto cierre Inicio", name: "inicio_cierre_texto", widget: "text" }
               - { label: "Título portada Alojamiento", name: "alojamiento_titulo", widget: "string" }
               - { label: "Texto ubicación", name: "alojamiento_ubicacion_texto", widget: "text" }
+              - { label: "URL del mapa (insertar de Google Maps)", name: "mapa_src", widget: "string", required: false, hint: "En Google Maps: Compartir → Insertar un mapa → copia solo la URL de dentro de src=\"...\"" }
               - { label: "Aviso pendiente (mapa)", name: "alojamiento_ubicacion_pendiente", widget: "text" }
               - { label: "Título cierre Alojamiento", name: "alojamiento_cierre_titulo", widget: "string" }
               - { label: "Texto cierre Alojamiento", name: "alojamiento_cierre_texto", widget: "text" }
